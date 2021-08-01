@@ -6,7 +6,7 @@ Python scripts that make using TerraGear easier
 ### process-elevations.py
 Simple wrapper script for `gdalchop` that can be run without arguments
 
-###process-shapefiles.py
+### process-shapefiles.py
 Merges, slices, and decodes OSM shapefiles
 
 **IMPORTANT: CORINE shapefiles are NOT YET SUPPORTED !!!**
@@ -14,7 +14,7 @@ Merges, slices, and decodes OSM shapefiles
 This script recursively searches the specified input directory for files containing `osm` and ending with `.shp`.
 All that are found are then categorized into multiple categories - one for landuse, one for landmass, one for roads, etc.
 **For this reason, you may only remove the `gis_` and `_free_1` parts from the shapefile's names !!!**
-**Everything else in the name must be conserved in order for your resulting scenery not to have giant holes !!!!!''**
+***Everything else in the name must be conserved in order for your resulting scenery not to have giant holes !!!!!''***
 
 Then, for each shapefile in each category the extents will be queried using `ogrinfo`. To reduce processing time on subsequent runs, the results will be cached.
 Then, the script will decide whether to merge or slice the shapefiles for each category based on the coordinates you input.
