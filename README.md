@@ -14,14 +14,16 @@ Merges, slices, and decodes OSM shapefiles
 This script recursively searches the specified input directory for files containing `osm` and ending with `.shp`.  
 All that are found are then categorized into multiple categories - one for landuse, one for landmass, one for roads, etc.  
 **For this reason, you may only remove the `gis_` and `_free_1` parts from the shapefile's names !!!**  
-***Everything else in the name must be conserved in order for your resulting scenery not to have giant holes !!!!!''***  
+***Everything else in the name must be conserved in order for your resulting scenery not to have giant holes !!!!!***  
 
-Then, for each shapefile in each category the extents will be queried using `ogrinfo`. To reduce processing time on subsequent runs, the results will be cached.  
+For each shapefile in each category the extents will be queried using `ogrinfo`. To reduce processing time on subsequent runs, the results will be cached.  
 Then, the script will decide whether to merge or slice the shapefiles for each category based on the coordinates you input.  
 It will merge / slice the files accordingly with `ogr2ogr`.  
 As the final step, the resulting shapefiles will be decoded into files that `tg-construct` can read using `ogr-decode`.  
 
 ## Installation
+These scripts do not necessarily be installed, but they are much easier to use if you install them.
+
 1. Clone the GitHub repository:  
 	`git clone https://github.com/TheFGFSEagle/terragear-tools.git`  
 2. Go into the resulting directory `terragear-tools`:  
