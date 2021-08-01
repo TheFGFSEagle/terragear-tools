@@ -1,9 +1,9 @@
 # terragear-tools
 Python scripts that make using TerraGear easier
 
-##Scripts
+## Scripts
 
-###process-elevations.py
+### process-elevations.py
 Simple wrapper script for `gdalchop` that can be run without arguments
 
 ###process-shapefiles.py
@@ -21,7 +21,7 @@ Then, the script will decide whether to merge or slice the shapefiles for each c
 It will merge / slice the files accordingly with `ogr2ogr`.
 As the final step, the resulting shapefiles will be decoded into files that `tg-construct` can read using `ogr-decode`.
 
-##Installation
+## Installation
 1. Clone the GitHub repository:
 	`git clone https://github.com/TheFGFSEagle/terragear-tools.git`
 2. Go into the resulting directory `terragear-tools`:
@@ -31,8 +31,8 @@ As the final step, the resulting shapefiles will be decoded into files that `tg-
 3. Done ! You can now run these scripts like any other executable: Example:
 	`~/scenery-workspace$ process-shapefiles.py`
 
-##License
+## License
 All files in this repository are released under the GNU General Public License; for more details see the [LICENSE file](LICENSE)
 
-##Contributors
+## Contributors
 The scripts were written entirely by me, but [Fahim Dalvi](https://forum.flightgear.org/memberlist.php?mode=viewprofile&u=699) from the FlightGear forum gave me some helpful tips.
