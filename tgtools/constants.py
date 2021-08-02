@@ -4,6 +4,7 @@
 import os
 import sys
 
-HOME = os.path.expanduser("~")
+HOME = os.environ.get("HOME", os.path.expanduser("~"))
 SCRIPTS = ["process-shapefiles.py", "process-elevations.py"]
 MODULE = "tgtools"
+__version__ = (1, 0, 0)

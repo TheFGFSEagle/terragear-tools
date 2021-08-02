@@ -8,6 +8,8 @@ import sys
 import argparse
 import subprocess
 
+from tgtools import constants
+
 argp = argparse.ArgumentParser(description="process-elevations.py - process a directory of elevation data files with gdalchop and terrafit")
 
 argp.add_argument(
@@ -22,6 +24,12 @@ argp.add_argument(
 	help="where to put the produced files (default: %(default)s)",
 	default="./work/elevation",
 	metavar="OUTPUT"
+)
+
+argp.add_argument(
+	"-v", "--version",
+	action="version",
+	version=f"TerraGear tools {'.'join(map(str, constants.__version__))}"
 )
 
 args = argp.parse_args()

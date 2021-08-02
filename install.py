@@ -15,7 +15,7 @@ argp = argparse.ArgumentParser(description="install.py - installs the TerraGear 
 argp.add_argument(
 	"-p", "--prefix",
 	help="Installation prefix (default: %(default)s)",
-	default=os.env.get("TGINSTALLPREFIX", os.path.join(constants.HOME, ".local")))
+	default=os.environ.get("TGINSTALLPREFIX", os.path.join(constants.HOME, ".local")))
 )
 
 argp.add_argument(
@@ -40,7 +40,7 @@ print("Installing scripts …")
 for script in constants.SCRIPTS:
 	shutil.copy2(os.path.join(SCRIPTDIR, script), BINDIR)
 
-if not BINDIR in os.env.get("PATH", "").split(os.pathsep):
+if not BINDIR in os.environ.get("PATH", "").split(os.pathsep):
 	if args.add_to_path:
 		print(f"Adding {BINDIR} to your $PATH …")
 		
@@ -52,7 +52,7 @@ if not BINDIR in os.env.get("PATH", "").split(os.pathsep):
 	else:
 		print(f"WARNING: {BINDIR} was not added to your $PATH - please do that manually")
 
-if not LIBDIR in os.env.get("PYTHONPATH", "").split(os.pathsep):
+if not LIBDIR in os.environ.get("PYTHONPATH", "").split(os.pathsep):
 	print(f"Adding {LIBDIR} to your $PYTHONPATH …")
 	
 	if not os.path.isdir(site.USER_SITE):
