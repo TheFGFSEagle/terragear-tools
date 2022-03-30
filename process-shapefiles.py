@@ -97,6 +97,6 @@ if __name__ == "__main__":
 	
 	shapefiles = shapefiles.find(src)
 	categories = shapefiles.categorize(shapefiles)
-	extents = shapefiles.get_extents(categorized, cache)
-	shapefiles = shapefiles.merge_slice(shapefiles, categories, extents, coords, cache)
-	result = shapefiles.decode(shapefiles, dest, cache)
+	extents = shapefiles.get_extents(categorized)
+	shapefiles = shapefiles.merge_slice(extents, coords)
+	result = shapefiles.decode(shapefiles, dest)
